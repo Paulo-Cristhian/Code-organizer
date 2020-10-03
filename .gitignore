@@ -20,13 +20,13 @@
 *.mod
 *.smod
 
-# Compiled Static libraries
+# Libs estaticas compiladas
 *.lai
 *.la
 *.a
 *.lib
 
-# Executables
+# Executaveis
 *.exe
 *.out
 *.app
