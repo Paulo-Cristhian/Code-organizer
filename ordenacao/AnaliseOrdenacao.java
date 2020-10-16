@@ -30,7 +30,6 @@ public class AnaliseOrdenacao {
 		case "1":
 			aNomear.settam(10);
 			break;
-	 
 		case "2":
 			aNomear.settam(50);
 			break;
@@ -53,10 +52,9 @@ public class AnaliseOrdenacao {
 		//aNomear.settam(10);
 		//System.out.println(aNomear.tam);
 		//System.out.println(aNomear.vetorUnico[0]);
-		System.out.println(aNomear.vetorUnico.length);
-		for(int i = 0; i < aNomear.vetorUnico.length/1000; i++) {
-			System.out.print(aNomear.vetorUnico[i]+", ");
-		}
+		//System.out.println(aNomear.vetorUnico.length);
+		System.out.println("final ");
+		aNomear.mostraVetor(aNomear.vetorUnico);
 	}
 
 }

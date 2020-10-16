@@ -1,8 +1,8 @@
 package ordenacao;
 
-public class bubble {
-	// Passa como parâmetro o vetor a ser ordenado
-		static void bubbleSort(int vetor[]){
+public class algoritmoOrdenacao {
+		// Passa como parâmetro o vetor a ser ordenado
+		public void bubbleSort(int[] vetor){
 			// Verificação se a troca de posição dos elementos deve ser realizada
 	        boolean troca = true;
 	        int aux;
@@ -25,5 +25,36 @@ public class bubble {
 				System.out.print(vetor[i]+", ");
 			}*/
 	}
+		static void insertionSort(int[] vetor) {
+		    int j;
+		    int key;
+		    int i;
+
+		    for (j = 1; j < vetor.length; j++)
+		    {
+		      key = vetor[j];
+		      for (i = j - 1; (i >= 0) && (vetor[i] > key); i--)
+		      {
+		         vetor[i + 1] = vetor[i];
+		       }
+		        vetor[i + 1] = key;
+		    }
+		}
+		public static void selectionSort(int[] array) {
+			  for (int fixo = 0; fixo < array.length - 1; fixo++) {
+			    int menor = fixo;
+
+			    for (int i = menor + 1; i < array.length; i++) {
+			       if (array[i] < array[menor]) {
+			          menor = i;
+			       }
+			    }
+			    if (menor != fixo) {
+			      int t = array[fixo];
+			      array[fixo] = array[menor];
+			      array[menor] = t;
+			    }
+			  }
+		}
 
 }
