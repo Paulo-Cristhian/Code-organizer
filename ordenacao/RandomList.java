@@ -11,7 +11,7 @@ public class RandomList {
 	public void settam(int param) { 
 		//this.tam = param;
 		this.vetorUnico = geraArray(param*1000);
-		System.out.println("Vetor Setado e inicializado a primeira vez ");
+		//System.out.println("Vetor Setado e inicializado a primeira vez ");
 		//mostraVetor(vetorUnico);
 		ordena(vetorUnico);
 	}
@@ -33,8 +33,9 @@ public class RandomList {
 			long tempoInicial = System.currentTimeMillis();
 			
 			int[] vetorClone = vetorUnico.clone();
-			System.out.println("Vetor inicializado: ");
+			System.out.println("\nVetor inicializado... ");
 			mostraVetor(vetorClone);
+			System.out.println("\nOrdenando em "+algoritmo[etapa]+" ...");
 			
 			/*
 		    sort.bubbleSort(vetorUnico);
@@ -51,20 +52,21 @@ public class RandomList {
 		    	sort.selectionSort(vetorClone);
 		    	break;
 		    case 3:
-		    	sort.bubbleSort(vetorClone);
+		    	//sort.bubbleSort(vetorClone);
+		    	sort.quickSort(vetorClone,0,vetorClone.length-1);
 		    	break;
 		    }
 		    // algoritmo[j], unique);
 
 		    long tempoFinal = System.currentTimeMillis();
 		    
-		    System.out.println("No sistema de ordenação "+ algoritmo[etapa]);
+		    System.out.println("No sistema de ordenação "+ algoritmo[etapa] + " o vetor final foi: ");
 		    mostraVetor(vetorClone);
-		    System.out.println("\nExecutado em = " + (tempoFinal - tempoInicial) + " ms");
+		    System.out.println("\nExecutado em = " + (tempoFinal - tempoInicial) + " ms\n");
 		}
 	}	
 	public static void mostraVetor(int vetor[]) {
-		System.out.println("Mostrando o Vetor: ");
+		//System.out.println("Mostrando o Vetor: ");
 		for(int i = 0; i < vetor.length/1000; i++) {
 			System.out.print(vetor[i]+", ");
 		}

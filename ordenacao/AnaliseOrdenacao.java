@@ -53,8 +53,8 @@ public class AnaliseOrdenacao {
 		//System.out.println(aNomear.tam);
 		//System.out.println(aNomear.vetorUnico[0]);
 		//System.out.println(aNomear.vetorUnico.length);
-		System.out.println("final ");
-		aNomear.mostraVetor(aNomear.vetorUnico);
+		//System.out.println("final ");
+		//aNomear.mostraVetor(aNomear.vetorUnico);
 	}
 
 }
