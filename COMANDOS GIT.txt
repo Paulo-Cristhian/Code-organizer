@@ -1,0 +1,9 @@
+git status //verificar situação do repositorio
+
+git add . //Preparar arquivos modificados para serem commitados
+
+git commit -m "Nome Do Pacote" //Compilar alterações
+
+git push origin main //Enviar alterações compiladas para repositório remoto
+
+git pull //Baixar alterações do repositório remoto
