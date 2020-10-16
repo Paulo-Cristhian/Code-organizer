@@ -1,32 +1,78 @@
 package ordenacao;
 	
 	/*
-	 * Objetivo: Fazer  comparações  sobre  o  tempo  gasto  para  a 
-classificação de vetores utilizando os quatro métodos estudos em sala de aula:
+	 * Objetivo: Fazer  comparaï¿½ï¿½es  sobre  o  tempo  gasto  para  a 
+classificaï¿½ï¿½o de vetores utilizando os quatro mï¿½todos estudos em sala de aula:
 		* Bubble sort, 
 		* Selection sort, 
 		* Insertion sort, 
 		* Quick sort.
-	 * Deverá ser feita a ordenação de vetores de inteiros radômicos com diferentes 
+	 * Deverï¿½ ser feita a ordenaï¿½ï¿½o de vetores de inteiros radï¿½micos com diferentes 
 tamanhos: 
 		* 10.000, 
 		* 50.000, 
 		* 100.000, 
 		* 500.000, 
-		* 1.000.000 de posições.
+		* 1.000.000 de posiï¿½ï¿½es.
 
 	 */
+
+import java.util.Scanner;
+
+
 public class AnaliseOrdenacao {
 	
 	public static void main(String[] args) {
+		
+
+ 
+
+    
+		
+
+		
+		
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Qual tamanho deve ter o vetor?");
+		System.out.println("[1] = 10.000");
+		System.out.println("[2] = 50.000");
+		System.out.println("[3] = 100.000");
+		System.out.println("[4] = 500.000");
+		System.out.println("[5] = 1.000.000");
+
+		String nome = scanner.next();
+		System.out.println("Seja bem vindo " + nome + "!");
+		
+		// switch (nome) {
+		// 	case "1":
+		// 			aNomear.tam = 10;
+		// 			break;
+		 
+		// 	case "2":
+		// 			aNomear.tam = 50;
+		// 			break;
+		 
+		// 	case "10":
+		// 			System.out.println ("O valor da variavel Ã© 10");
+		// 			break;
+		//    default:
+		// 			System.out.println ("O valor da variavel nÃ£o Ã© nenhum dos anteriores");
+		 
+		 
+		//  }
+		
 		// TODO Auto-generated method stub
-		RandomList aNomear = new RandomList();
+		
 		// RandomList other = new OtherClass(); // Abort
+		
+		RandomList aNomear = new RandomList();
+		
 		System.out.println(aNomear.saudacao);
 		System.out.println("Randon: "+  aNomear.pregenerate + ", "+ (int) aNomear.generate);
-		System.out.println(aNomear.myNum[0]);
-		aNomear.tam = 10;
-		System.out.println(aNomear.unique[0]);
+		int[] teste = RandomList.geraArray(50);
+		System.out.println(teste.length);
+		System.out.println(teste[0]);
 	}
 
 }
