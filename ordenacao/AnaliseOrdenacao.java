@@ -43,36 +43,45 @@ public class AnaliseOrdenacao {
 
 		String nome = scanner.next();
 		System.out.println("Seja bem vindo " + nome + "!");
+
+		RandomList aNomear = new RandomList();
+
 		
-		// switch (nome) {
-		// 	case "1":
-		// 			aNomear.tam = 10;
-		// 			break;
+		switch (nome) {
+			case "1":
+				aNomear.settam(10);
+				break;
 		 
-		// 	case "2":
-		// 			aNomear.tam = 50;
-		// 			break;
+			case "2":
+			aNomear.settam(50);
+				break;
 		 
-		// 	case "10":
-		// 			System.out.println ("O valor da variavel é 10");
-		// 			break;
-		//    default:
-		// 			System.out.println ("O valor da variavel não é nenhum dos anteriores");
+			case "3":
+			aNomear.settam(100);
+				break;
+			case "4":
+			aNomear.settam(500);
+				break;
+			case "5":
+			aNomear.settam(1000);
+				break;
+		   default:
+					System.out.println ("O valor da variavel não é nenhum dos anteriores");
 		 
 		 
-		//  }
+		 }
 		
 		// TODO Auto-generated method stub
 		
 		// RandomList other = new OtherClass(); // Abort
 		
-		RandomList aNomear = new RandomList();
+		
 		
 		System.out.println(aNomear.saudacao);
 		System.out.println("Randon: "+  aNomear.pregenerate + ", "+ (int) aNomear.generate);
-		int[] teste = RandomList.geraArray(50);
-		System.out.println(teste.length);
-		System.out.println(teste[0]);
+		
+		// aNomear.settam(10);
+		System.out.println(aNomear.unique.length);
 	}
 
 }
