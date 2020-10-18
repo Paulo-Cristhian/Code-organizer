@@ -4,12 +4,12 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /*
-	 * Objetivo: Fazer  comparações  sobre  o  tempo  gasto  para  a classificação 
-	   de vetores utilizando os quatro métodos estudos em sala de aula:
+	 * Objetivo: Fazer  comparaï¿½ï¿½es  sobre  o  tempo  gasto  para  a classificaï¿½ï¿½o 
+	   de vetores utilizando os quatro mï¿½todos estudos em sala de aula:
 		* Bubble sort, * Selection sort, * Insertion sort, * Quick sort.
-	 * Deverá ser feita a ordenação de vetores de inteiros radômicos com diferentes 
+	 * Deverï¿½ ser feita a ordenaï¿½ï¿½o de vetores de inteiros radï¿½micos com diferentes 
 	   tamanhos: 
-		* 10.000, * 50.000, * 100.000, * 500.000, * 1.000.000 de posições.
+		* 10.000, * 50.000, * 100.000, * 500.000, * 1.000.000 de posiï¿½ï¿½es.
 */
 
 public class AnaliseOrdenacao {
@@ -22,6 +22,7 @@ public class AnaliseOrdenacao {
 		System.out.println("[3] = 100.000");
 		System.out.println("[4] = 500.000");
 		System.out.println("[5] = 1.000.000");
+		//System.out.println("[666] = Teste brutal!");
 
 		String opcao = scanner.next();
 		System.out.println("Seja bem vindo! Foi Selecionado " + opcao + "!");
@@ -43,6 +44,9 @@ public class AnaliseOrdenacao {
 		case "5":
 			aNomear.settam(1000);
 			break;
+		case "666":
+			//aNomear.reverseArray(1000000);
+			break;
 	   default:
 			System.out.println ("O valor da variavel nÃ£o Ã© nenhum dos anteriores");
 	 }
@@ -58,3 +62,10 @@ public class AnaliseOrdenacao {
 	}
 
 }
+// Pontos que podem ser incrementados: Adicionar mais comentï¿½rios explicativos
+// Limpar cï¿½digos inutilizados
+// reduzir instancias desnecessarias e vars redundantes
+// tornar numeros gerados unicos e diferentes de 0
+// possibilitar teste com hyperthreads
+// setar um vetor default pra comparaï¿½ï¿½o entre mï¿½quinas
+// nomear melhor cada var

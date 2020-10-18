@@ -62,6 +62,7 @@ public class algoritmoOrdenacao {
 		static void quickSort(int[] vetor, int inicio, int fim) {
             if (inicio < fim) {
                    int posicaoPivo = separar(vetor, inicio, fim);
+                   // System.out.println("Qck "+ inicio+" : "+fim+" : "+posicaoPivo);
                    quickSort(vetor, inicio, posicaoPivo - 1);
                    quickSort(vetor, posicaoPivo + 1, fim);
             }
@@ -70,6 +71,7 @@ public class algoritmoOrdenacao {
             int pivo = vetor[inicio];
             int i = inicio + 1, f = fim;
             while (i <= f) {
+            	//System.out.println(vetor[i]);
                    if (vetor[i] <= pivo)
                           i++;
                    else if (pivo < vetor[f])
@@ -86,5 +88,4 @@ public class algoritmoOrdenacao {
             vetor[f] = pivo;
             return f;
       }
-
 }
