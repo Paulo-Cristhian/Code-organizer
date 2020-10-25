@@ -46,6 +46,8 @@ namespace JsonDemo
             //mostraVetor(lista);
             //Console.WriteLine(Convert.ToString(lista));
             bubbleSort(lista);
+            //Quick_Sort(lista, 0, lista.Length - 1);
+            //cocktailSort(lista);
             //Console.WriteLine("\n"+lista.Length);
             //mostraVetor(lista);
 
@@ -202,5 +204,119 @@ namespace JsonDemo
          * Método de ordenação cockTailSort
          * Método de ordenação insertionSort
         */
+        // --QuickSort--//
+            private static void Quick_Sort(int[] arr, int left, int right)
+            {
+                if (left < right)
+                {
+                    int pivot = Partition(arr, left, right);
+
+                    if (pivot > 1)
+                    {
+                        Quick_Sort(arr, left, pivot - 1);
+                    }
+                    if (pivot + 1 < right)
+                    {
+                        Quick_Sort(arr, pivot + 1, right);
+                    }
+                }
+
+            }
+
+            private static int Partition(int[] arr, int left, int right)
+            {
+                int pivot = arr[left];
+                while (true)
+                {
+
+                    while (arr[left] < pivot)
+                    {
+                        left++;
+                    }
+
+                    while (arr[right] > pivot)
+                    {
+                        right--;
+                    }
+
+                    if (left < right)
+                    {
+                        if (arr[left] == arr[right]) return right;
+
+                        int temp = arr[left];
+                        arr[left] = arr[right];
+                        arr[right] = temp;
+
+
+                    }
+                    else
+                    {
+                        return right;
+                    }
+                }
+            }
+        // --QuickSort--\\
+        // --CockTailSort--//
+            static void cocktailSort(int[] a)
+            {
+                bool swapped = true;
+                int start = 0;
+                int end = a.Length;
+
+                while (swapped == true)
+                {
+
+                    // reset the swapped flag on entering the 
+                    // loop, because it might be true from a 
+                    // previous iteration. 
+                    swapped = false;
+
+                    // loop from bottom to top same as 
+                    // the bubble sort 
+                    for (int i = start; i < end - 1; ++i)
+                    {
+                        if (a[i] > a[i + 1])
+                        {
+                            int temp = a[i];
+                            a[i] = a[i + 1];
+                            a[i + 1] = temp;
+                            swapped = true;
+                        }
+                    }
+
+                    // if nothing moved, then array is sorted. 
+                    if (swapped == false)
+                        break;
+
+                    // otherwise, reset the swapped flag so that it 
+                    // can be used in the next stage 
+                    swapped = false;
+
+                    // move the end point back by one, because 
+                    // item at the end is in its rightful spot 
+                    end = end - 1;
+
+                    // from top to bottom, doing the 
+                    // same comparison as in the previous stage 
+                    for (int i = end - 1; i >= start; i--)
+                    {
+                        if (a[i] > a[i + 1])
+                        {
+                            int temp = a[i];
+                            a[i] = a[i + 1];
+                            a[i + 1] = temp;
+                            swapped = true;
+                        }
+                    }
+
+                    // increase the starting point, because 
+                    // the last stage would have moved the next 
+                    // smallest number to its rightful spot. 
+                    start = start + 1;
+                }
+            }
+        // --CockTailSort--\\
+
     }
+
 }
