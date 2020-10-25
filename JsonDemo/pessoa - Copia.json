@@ -1,0 +1,30 @@
+﻿[
+	{
+		"Nome": "Andre Secco",
+		"Idade": 25,
+		"Empresa": "RSoft Sistemas",
+		/*"Endereco": [
+			{
+				"Logradouro": "Rua Teste",
+				"Numero": 120,
+				"Bairro": "Centro",
+				"Cidade": "Videira",
+				"UF": "SC"
+			}
+		]*/
+	},
+	{
+		"Nome": "Sandro Silva",
+		"Idade": 29,
+		"Empresa": "Industrias Cítricas",
+		/*"Endereco": [
+			{
+				"Logradouro": "Rua Teste2",
+				"Numero": 122,
+				"Bairro": "Centro2",
+				"Cidade": "Videira2",
+				"UF": "SC2"
+			}
+		]*/
+	}
+]

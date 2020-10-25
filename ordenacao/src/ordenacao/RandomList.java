@@ -3,6 +3,7 @@ package ordenacao;
 public class RandomList extends algoritmoOrdenacao{
 	public static int tam; // [10 || 50 || 100 || 500 || 1000] * 1000
 	public int[] vetorUnico;
+	public int[] vetorInverso = ;
 	public void settam(int param) { 
 		this.tam = param;
 		this.vetorUnico = geraArray(param*1000);

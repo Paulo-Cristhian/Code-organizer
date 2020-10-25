@@ -1,0 +1,52 @@
+[
+	{
+		"IdFoto": 1,
+		"Titulo": "Floretas Amazonas_001",
+		"LocalDaFoto": "Manaus",
+		"DataDaFoto": "12/10/2020 10:58",
+		"ResoluçãoX": 1980,
+		"ResoluçãoY": 1080,
+		"Tamanho": "98,6KB",
+		"Formato": "Raw"
+	},
+	{
+		"IdFoto": 2,
+		"Titulo": "Floretas Nordeste_002",
+		"LocalDaFoto": "Roraima",
+		"DataDaFoto": "12/10/2020 10:57",
+		"ResoluçãoX": 1980,
+		"ResoluçãoY": 1080,
+		"Tamanho": "98,3KB",
+		"Formato": "png"
+	},
+	{
+		"IdFoto": 3,
+		"Titulo": "Floretas Nordeste_003",
+		"LocalDaFoto": "Piaui",
+		"DataDaFoto": "12/08/2003 12:43",
+		"ResoluçãoX": 1280,
+		"ResoluçãoY": 720,
+		"Tamanho": "87,23KB",
+		"Formato": "jpg"
+	},
+	{
+		"IdFoto": 4,
+		"Titulo": "Floretas Amazonas_004",
+		"LocalDaFoto": "Manaus",
+		"DataDaFoto": "12/10/2018 18:25",
+		"ResoluçãoX": 1600,
+		"ResoluçãoY": 900,
+		"Tamanho": "113,17KB",
+		"Formato": "jpeg"
+	},
+	{
+		"IdFoto": 5,
+		"Titulo": "Floretas Amazonas_005",
+		"LocalDaFoto": "Manaus",
+		"DataDaFoto": "05/12/2020 20:38",
+		"ResoluçãoX": 640,
+		"ResoluçãoY": 480,
+		"Tamanho": "67,5KB",
+		"Formato": "gif"
+	},
+]
