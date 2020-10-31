@@ -1,0 +1,10 @@
+C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\bin\Debug\AnaliseAlgoritmoOrdenacao.exe.config
+C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\bin\Debug\AnaliseAlgoritmoOrdenacao.exe
+C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\bin\Debug\AnaliseAlgoritmoOrdenacao.pdb
+C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\obj\Debug\AnaliseAlgoritmoOrdenacao.csprojAssemblyReference.cache
+C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\obj\Debug\AnaliseAlgoritmoOrdenacao.Form1.resources
+C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\obj\Debug\AnaliseAlgoritmoOrdenacao.Properties.Resources.resources
+C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\obj\Debug\AnaliseAlgoritmoOrdenacao.csproj.GenerateResource.cache
+C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\obj\Debug\AnaliseAlgoritmoOrdenacao.csproj.CoreCompileInputs.cache
+C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\obj\Debug\AnaliseAlgoritmoOrdenacao.exe
+C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\obj\Debug\AnaliseAlgoritmoOrdenacao.pdb
