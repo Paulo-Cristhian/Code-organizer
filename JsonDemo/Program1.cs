@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-//using System.Text.Json.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +15,6 @@ using System.Drawing;
 using System.Runtime.Serialization;
 using System.Collections.ObjectModel;
 using System.Security.Cryptography.X509Certificates;
-using Newtonsoft.Json;
 
 namespace JsonDemo
 {
@@ -28,19 +26,16 @@ namespace JsonDemo
             //InitializeComponent();
             //gui.Form1();
             //Application.EnableVisualStyle();
-            //Application.SetHighDpiMode(HighDpiMode.SystemAware);
-            Application.EnableVisualStyles();
-            /// Application.Run(new Program());
             // Random randNum = new Random();
             Foto fotoObj = new Foto();
             //Console.WriteLine(fotoObj.zona);
 
-            //Console.WriteLine("Teste");
+            Console.WriteLine("Teste");
             Console.WriteLine(geraNomeacao());
 
             var json = File.ReadAllText(@"C:\Users\alefm\source\repos\JsonDemo\pessoa.json");
             //var json = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\pessoa.json");
-            //Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory);
+            Console.WriteLine(AppDomain.CurrentDomain.BaseDirectory);
             //Console.WriteLine(AppDomain.CurrentDomain);
             var js = new DataContractJsonSerializer(typeof(List<Pessoa>));
             var ms = new MemoryStream(Encoding.UTF8.GetBytes(json));
@@ -48,9 +43,9 @@ namespace JsonDemo
             // new Pessoa = pessoa p
             // Console.WriteLine(Pessoa.Nome);
             var show = pessoa[0].Nome;
-            //Console.WriteLine(show);
-            //show = pessoa[1].Nome;
-            //Console.WriteLine(show);
+            Console.WriteLine(show);
+            show = pessoa[1].Nome;
+            Console.WriteLine(show);
 
             int[] lista;
             lista = new int[100];
@@ -61,7 +56,6 @@ namespace JsonDemo
             //mostraVetor(lista);
             //Console.WriteLine(Convert.ToString(lista));
             bubbleSort(lista);
-            
             //Quick_Sort(lista, 0, lista.Length - 1);
             //cocktailSort(lista);
             //Console.WriteLine("\n"+lista.Length);
@@ -71,82 +65,55 @@ namespace JsonDemo
             js = new DataContractJsonSerializer(typeof(List<Foto>));
             ms = new MemoryStream(Encoding.UTF8.GetBytes(json));
             var foto = (List<Foto>)js.ReadObject(ms);
-            //show = foto[0].LocalDaFoto;
-            //Console.WriteLine("foto SetType " + foto.GetType());
-            //Console.WriteLine(show); // Manaus
-            //Console.WriteLine("foto[0].LocalDaFoto GetType " + show.GetType());
-            //Console.WriteLine("Count " + foto.Count); // 5
-            //Console.WriteLine("Second");
+            show = foto[0].LocalDaFoto;
+            Console.WriteLine("foto SetType " + foto.GetType());
+            Console.WriteLine(show); // Manaus
+            Console.WriteLine("foto[0].LocalDaFoto GetType " + show.GetType());
+            Console.WriteLine("Count " + foto.Count); // 5
+            Console.WriteLine("Second");
             var show2 = foto[0];
-            //Console.WriteLine("show2 GetType " + show2.GetType());
+            Console.WriteLine("show2 GetType " + show2.GetType());
             var arr1 = transformArrayTitulo(foto, foto.Count);
-            bubbleSortString(arr1);
             Console.WriteLine("preFor");
             for (var i = 0; i < arr1.Length; i++)
             {
                 Console.WriteLine(arr1[i]);
             }
-            //Suposto código de sobrescrita do arquivo json
-            //string jsonString = JsonSerializer.Serialize(weatherForecast); //Converte para o formato json
-            //File.WriteAllText(fileName, jsonString); //sobrescreve o arquivo inteiro
-
             String strToBytes = "abcwxyzaçãéóõô"; //231 227
             byte[] asciiBytes = Encoding.Default.GetBytes(strToBytes);
             Console.WriteLine("{0} {1} {2} ", asciiBytes[0], asciiBytes[1], asciiBytes[2]); // 97 98 99
-            foreach (int c in asciiBytes)
-            {
-                Console.Write(" " + c);
-            }
+            foreach (int c in asciiBytes) { 
+                Console.Write(" "+c); }
             strToBytes = "ABCWXYZaÇÃÉÓÕÔ "; // 199 195
             asciiBytes = Encoding.Default.GetBytes(strToBytes); //ASCII
             Console.WriteLine("\n{0} {1} {2} ", asciiBytes[0], asciiBytes[1], asciiBytes[2]); // 65 66 67
             foreach (int c in asciiBytes)
-            {
-                Console.Write(" " + c);
-            }
-            Console.WriteLine("\n chars " + (char)65);
+                {
+                    Console.Write(" " + c);
+                }
+            Console.WriteLine("\n chars "+ (char)65);
             byte by;
             //char c;
             string str2;
-            for (int b = 65; b < 123; b++)
-            {
-                Console.Write("" + (char)b);
-                if (b == 90) b = 96;
+            for (int b = 65; b <123; b++)
+                {
+                    Console.Write("" + (char)b);
+                    if (b == 90) b = 96;
                 //Console.Write(System.Text.Encoding.ASCII.GetString(new byte[] { 65 }));
             }
-            Console.Write("" + (char)231 + (char)227 + (char)199 + (char)195 + (char)32 + (char)233 + (char)201 + (char)245); //çãÇÃ éÉó
+            Console.Write("" +(char)231+(char)227+(char)199+(char)195+(char)32+(char)233+(char)201+(char)245); //çãÇÃ éÉó
 
 
             DateTime now = DateTime.Now;
             DateTime today = DateTime.Today;
             DateTime dateTime = DateTime.UtcNow.Date;
-            Console.WriteLine("\n" + now);
-            //Console.WriteLine(today); // 00:00:00
-            //Console.WriteLine(dateTime.ToString("d"));
+            Console.WriteLine("\n"+now);
+            Console.WriteLine(today); // 00:00:00
+            Console.WriteLine(dateTime.ToString("d"));
             string date = now.GetDateTimeFormats('d')[0];
             string time = now.GetDateTimeFormats('t')[0];
-            //Console.WriteLine(date);
-            //TimeSpan interval = new TimeSpan();
+            Console.WriteLine(date);
             Console.WriteLine(time);
-
-            //diferença de tempo
-
-
-            //var js2 = new DataContractJsonSerializer(typeof(List<Pessoa>));
-            //var js3 = new DataContractSerializer(typeof(List<Pessoa>));
-            //var ms2 = new MemoryStream(Encoding.UTF8.GetBytes(json));
-            //js2.WriteObject(ms2, pessoa);
-            //var pessoa2 = (List<Pessoa>)js2.ReadObject(ms2);
-            
-            //string jsonString = Program.Serialize(foto); //Converte para o formato json
-            //File.WriteAllText(@"C:\Users\alefm\source\repos\JsonDemo\pessoa2.json", js2); //sobrescreve o arquivo inteiro
-
-            string jsonData = JsonConvert.SerializeObject(pessoa);
-            File.WriteAllText(@"C:\Users\alefm\source\repos\JsonDemo\pessoa2.json", jsonData); //sobrescreve o arquivo inteiro
-
-            Console.WriteLine("pessoa2");
-           // Response.Write(jsonData);
-
 
             Console.ReadKey();
         }
@@ -166,7 +133,7 @@ namespace JsonDemo
         static void mostraVetor(int[] vetor)
         {
             Console.Write(vetor[0]);
-            for (int i = 1; i < 4; i++)
+            for (int i = 1; i < 100; i++)
             {
                 Console.Write(", " + vetor[i]);
             }
@@ -201,7 +168,6 @@ namespace JsonDemo
         {
             Boolean troca = true;
             String aux;
-            Console.WriteLine("Sort String");
             while (troca)
             {
                 troca = false;
@@ -214,7 +180,6 @@ namespace JsonDemo
                         vetor[i + 1] = aux;
                         troca = true;
                     }
-                    //Console.WriteLine(vetor[i]);
                 }
             }
         }
@@ -230,10 +195,9 @@ namespace JsonDemo
         }*/
         static String[] transformArrayTitulo(List<Foto> fotoObj, int tam) //obj.Count
         {
-            Console.WriteLine("the string "+typeof(List<Foto>));
-            Console.WriteLine("the string " + typeof(fotoObj[1].Titulo));
+
             String[] arr = new string[tam];
-            for (int i = 0; i < tam; i++)
+            for(int i=0; i<tam; i++)
             {
                 arr[i] = fotoObj[i].Titulo;
                 Console.WriteLine(arr[i]);
@@ -249,14 +213,14 @@ namespace JsonDemo
             //quantas letra vai ter o nome
             int tam = randNum.Next(2, 9);
             //str = new String[tam];
-            for (int i = 0; i < tam; i++)
+            for(int i = 0; i<tam; i++)
             {
-                str = str.Insert(i, Char.ToString((char)randNum.Next(97, 123)));
+                str = str.Insert(i, Char.ToString((char) randNum.Next(97, 123)));
             }
 
             return str;
         }
-
+        
         public static int randomic(int intervalInit, int intervalEnd)
         {
             //static Random randNum;
@@ -275,120 +239,120 @@ namespace JsonDemo
          * Método de ordenação insertionSort 
         */
         // --QuickSort--//
-        private static void Quick_Sort(int[] arr, int left, int right)
-        {
-            if (left < right)
+            private static void Quick_Sort(int[] arr, int left, int right)
             {
-                int pivot = Partition(arr, left, right);
-
-                if (pivot > 1)
-                {
-                    Quick_Sort(arr, left, pivot - 1);
-                }
-                if (pivot + 1 < right)
-                {
-                    Quick_Sort(arr, pivot + 1, right);
-                }
-            }
-
-        }
-
-        private static int Partition(int[] arr, int left, int right)
-        {
-            int pivot = arr[left];
-            while (true)
-            {
-
-                while (arr[left] < pivot)
-                {
-                    left++;
-                }
-
-                while (arr[right] > pivot)
-                {
-                    right--;
-                }
-
                 if (left < right)
                 {
-                    if (arr[left] == arr[right]) return right;
+                    int pivot = Partition(arr, left, right);
 
-                    int temp = arr[left];
-                    arr[left] = arr[right];
-                    arr[right] = temp;
-
-
+                    if (pivot > 1)
+                    {
+                        Quick_Sort(arr, left, pivot - 1);
+                    }
+                    if (pivot + 1 < right)
+                    {
+                        Quick_Sort(arr, pivot + 1, right);
+                    }
                 }
-                else
+
+            }
+
+            private static int Partition(int[] arr, int left, int right)
+            {
+                int pivot = arr[left];
+                while (true)
                 {
-                    return right;
+
+                    while (arr[left] < pivot)
+                    {
+                        left++;
+                    }
+
+                    while (arr[right] > pivot)
+                    {
+                        right--;
+                    }
+
+                    if (left < right)
+                    {
+                        if (arr[left] == arr[right]) return right;
+
+                        int temp = arr[left];
+                        arr[left] = arr[right];
+                        arr[right] = temp;
+
+
+                    }
+                    else
+                    {
+                        return right;
+                    }
                 }
             }
-        }
         // --QuickSort--\\
         // --CockTailSort--//
-        static void cocktailSort(int[] a)
-        {
-            bool swapped = true;
-            int start = 0;
-            int end = a.Length;
-
-            while (swapped == true)
+            static void cocktailSort(int[] a)
             {
+                bool swapped = true;
+                int start = 0;
+                int end = a.Length;
 
-                // reset the swapped flag on entering the 
-                // loop, because it might be true from a 
-                // previous iteration. 
-                swapped = false;
-
-                // loop from bottom to top same as 
-                // the bubble sort 
-                for (int i = start; i < end - 1; ++i)
+                while (swapped == true)
                 {
-                    if (a[i] > a[i + 1])
+
+                    // reset the swapped flag on entering the 
+                    // loop, because it might be true from a 
+                    // previous iteration. 
+                    swapped = false;
+
+                    // loop from bottom to top same as 
+                    // the bubble sort 
+                    for (int i = start; i < end - 1; ++i)
                     {
-                        int temp = a[i];
-                        a[i] = a[i + 1];
-                        a[i + 1] = temp;
-                        swapped = true;
+                        if (a[i] > a[i + 1])
+                        {
+                            int temp = a[i];
+                            a[i] = a[i + 1];
+                            a[i + 1] = temp;
+                            swapped = true;
+                        }
                     }
-                }
 
-                // if nothing moved, then array is sorted. 
-                if (swapped == false)
-                    break;
+                    // if nothing moved, then array is sorted. 
+                    if (swapped == false)
+                        break;
 
-                // otherwise, reset the swapped flag so that it 
-                // can be used in the next stage 
-                swapped = false;
+                    // otherwise, reset the swapped flag so that it 
+                    // can be used in the next stage 
+                    swapped = false;
 
-                // move the end point back by one, because 
-                // item at the end is in its rightful spot 
-                end = end - 1;
+                    // move the end point back by one, because 
+                    // item at the end is in its rightful spot 
+                    end = end - 1;
 
-                // from top to bottom, doing the 
-                // same comparison as in the previous stage 
-                for (int i = end - 1; i >= start; i--)
-                {
-                    if (a[i] > a[i + 1])
+                    // from top to bottom, doing the 
+                    // same comparison as in the previous stage 
+                    for (int i = end - 1; i >= start; i--)
                     {
-                        int temp = a[i];
-                        a[i] = a[i + 1];
-                        a[i + 1] = temp;
-                        swapped = true;
+                        if (a[i] > a[i + 1])
+                        {
+                            int temp = a[i];
+                            a[i] = a[i + 1];
+                            a[i + 1] = temp;
+                            swapped = true;
+                        }
                     }
-                }
 
-                // increase the starting point, because 
-                // the last stage would have moved the next 
-                // smallest number to its rightful spot. 
-                start = start + 1;
+                    // increase the starting point, because 
+                    // the last stage would have moved the next 
+                    // smallest number to its rightful spot. 
+                    start = start + 1;
+                }
             }
-        }
         // --CockTailSort--\\
 
     }
-    
+    /*
     public partial class Program : Form
     {
         public Program()
@@ -415,21 +379,5 @@ namespace JsonDemo
         {
 
         }
-    }
+    }*/
 }
-
-/* 
- * Console Only
- * Iniciar lendo um arquivo json 'A', serializar convertendo para objeto $1
- * Mostrar seu tamanho $2
- * Percorer seus atributos $3
- * Separar um dos atributos em um array $4
- * Marcar tempo ms inicial $5
- * Iniciar ordenação $
- * Ao realizar a trocar um array auxiliar poderá armazenar o index na posição atual (base referencial para demais atributos, tornar opcional)
- * Marcar tempo ms final
- * Mostrar tempo (msFinal - msInicial)
- * Percorrer os 10 primeiros elementos par  a demonstrar o resultado da nova ordenação $
- * Reordenar os objetos e salvar em um arquivo json 'B'
- * 
-*/

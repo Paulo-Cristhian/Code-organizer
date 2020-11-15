@@ -46,5 +46,31 @@ namespace AnaliseAlgoritmoOrdenacao
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            //add pilha styled
+            // Primeiro elemento sempre por cima
+            
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var iten = comboBox1.SelectedItem;
+            iten = comboBox1.SelectedIndex;
+            this.listBox1.Items.AddRange(new object[] {
+            iten});
+            if (comboBox1.SelectedItem == "Data da Foto")
+            {
+                this.textBox1.Text = "\r\n" + iten;
+            }
+
+
+        }
     }
 }

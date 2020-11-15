@@ -1,0 +1,17 @@
+{
+    "folders": [
+		{
+			"path": "C:\\Users\\alefm\\OneDrive\\Documents\\Projetos\\dev"
+		},
+		{
+			"path": "C:\\Users\\alefm\\OneDrive\\Documents\\Projetos\\ProjetoGit\\Code-organizer\\ordenacao"
+		}
+	],
+    "settings": {
+        "workbench.colorCustomizations": {
+            "[Atom One Dark]": {
+                "editor.background": "#263238"
+            }
+        }
+    }
+}

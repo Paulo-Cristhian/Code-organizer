@@ -5,3 +5,9 @@ C:\Users\alefm\source\repos\JsonDemo\obj\Debug\JsonDemo.csproj.CoreCompileInputs
 C:\Users\alefm\source\repos\JsonDemo\obj\Debug\JsonDemo.exe
 C:\Users\alefm\source\repos\JsonDemo\obj\Debug\JsonDemo.pdb
 C:\Users\alefm\source\repos\JsonDemo\obj\Debug\JsonDemo.csprojAssemblyReference.cache
+C:\Users\alefm\source\repos\JsonDemo\obj\Debug\JsonDemo.csproj.GenerateResource.cache
+C:\Users\alefm\source\repos\JsonDemo\obj\Debug\JsonDemo.Program.resources
+C:\Users\alefm\source\repos\JsonDemo\bin\Debug\Json.Net.dll
+C:\Users\alefm\source\repos\JsonDemo\bin\Debug\Newtonsoft.Json.dll
+C:\Users\alefm\source\repos\JsonDemo\bin\Debug\Newtonsoft.Json.xml
+C:\Users\alefm\source\repos\JsonDemo\obj\Debug\JsonDemo.csproj.CopyComplete
