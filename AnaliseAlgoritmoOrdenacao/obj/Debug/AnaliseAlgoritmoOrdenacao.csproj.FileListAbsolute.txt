@@ -8,3 +8,7 @@ C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\obj\Debug\AnaliseAlgoritmo
 C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\obj\Debug\AnaliseAlgoritmoOrdenacao.csproj.CoreCompileInputs.cache
 C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\obj\Debug\AnaliseAlgoritmoOrdenacao.exe
 C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\obj\Debug\AnaliseAlgoritmoOrdenacao.pdb
+C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\bin\Debug\Json.Net.dll
+C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\bin\Debug\Newtonsoft.Json.dll
+C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\bin\Debug\Newtonsoft.Json.xml
+C:\Users\alefm\source\repos\AnaliseAlgoritmoOrdenacao\obj\Debug\AnaliseAlgoritmoOrdenacao.csproj.CopyComplete

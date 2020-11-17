@@ -8,6 +8,16 @@ namespace AnaliseAlgoritmoOrdenacao
 {
     static class Program
     {
+        static string log = "";
+        public static void setLog(string l)
+        {
+            log = l;
+        }
+        public static string getLog()
+        {
+            return log;
+        }
+
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
         /// </summary>
@@ -18,5 +28,6 @@ namespace AnaliseAlgoritmoOrdenacao
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+        
     }
 }
