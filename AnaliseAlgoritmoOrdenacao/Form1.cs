@@ -28,7 +28,7 @@ namespace AnaliseAlgoritmoOrdenacao
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Não quero Funfar!");
+            MessageBox.Show("Análise executada");
             if(radioButton1.Checked == false) // Dados de origem interna
             {   // gerar dados internamente
                 
@@ -49,25 +49,32 @@ namespace AnaliseAlgoritmoOrdenacao
             int[] arrOrdenaIntCopia = new int[100000];
             if (checkBox1.Checked == true) {
                 DateTime startTime = DateTime.Now;
-                TimeSpan interval;
+                int msStart = startTime.Millisecond;
+                AnaliseAlgoritmoOrdenacao.Program.setLog(msStart.ToString() + "\r\n" + AnaliseAlgoritmoOrdenacao.Program.getLog());
+                this.textBox1.Text = AnaliseAlgoritmoOrdenacao.Program.getLog();
+                //TimeSpan interval;
+                AnaliseAlgoritmoOrdenacao.Program.setLog(comboBox1.SelectedIndex + ": indece\r\n" + AnaliseAlgoritmoOrdenacao.Program.getLog());
+                this.textBox1.Text = AnaliseAlgoritmoOrdenacao.Program.getLog();
                 if (comboBox1.SelectedIndex == 4) {
-                    arrOrdena.CopyTo(arrOrdenaIntCopia, 0);
-                    Quick_Sort(arrOrdenaIntCopia, 0, arrOrdenaIntCopia.Length - 1);
+                    Quick_Sort(arrOrdena, 0, arrOrdena.Length - 1);
                 }
                 else {
                     arrOrdena.CopyTo(arrOrdenaStringCopia, 0);
                     Quick_Sort(arrOrdenaStringCopia, 0, arrOrdenaStringCopia.Length - 1);
                 }
-                interval = DateTime.Now - startTime;
-                addLog(interval.Milliseconds.ToString());
-                AnaliseAlgoritmoOrdenacao.Program.setLog(interval.Milliseconds.ToString() + "\r\n" + AnaliseAlgoritmoOrdenacao.Program.getLog());
+                DateTime finalTime = DateTime.Now;
+                int msFinal = finalTime.Millisecond;
+                int ms = msFinal - msStart;
+                addLog(ms.ToString());
+                AnaliseAlgoritmoOrdenacao.Program.setLog(ms.ToString() + "\r\n" + AnaliseAlgoritmoOrdenacao.Program.getLog());
                 this.textBox1.Text = AnaliseAlgoritmoOrdenacao.Program.getLog();
             }
             if (checkBox2.Checked == true)
             {
+                arrOrdena.CopyTo(arrOrdenaStringCopia, 0);
                 DateTime startTime = DateTime.Now;
                 TimeSpan interval;
-                //ordenação cocktailSort(lista);
+                CocktailSort(arrOrdenaIntCopia);
                 interval = DateTime.Now - startTime;
                 addLog(interval.Milliseconds.ToString());
                 AnaliseAlgoritmoOrdenacao.Program.setLog(interval.Milliseconds.ToString() + "\r\n" + AnaliseAlgoritmoOrdenacao.Program.getLog());
@@ -75,9 +82,10 @@ namespace AnaliseAlgoritmoOrdenacao
             }
             if (checkBox3.Checked == true)
             {
+                arrOrdena.CopyTo(arrOrdenaStringCopia, 0);
                 DateTime startTime = DateTime.Now;
                 TimeSpan interval;
-                //MergeSort(arr, 0, arr.Length - 1);
+                MergeSort(arrOrdenaIntCopia, 0, arrOrdenaIntCopia.Length - 1);
                 interval = DateTime.Now - startTime;
                 addLog(interval.Milliseconds.ToString());
                 AnaliseAlgoritmoOrdenacao.Program.setLog(interval.Milliseconds.ToString() + "\r\n" + AnaliseAlgoritmoOrdenacao.Program.getLog());
@@ -95,7 +103,7 @@ namespace AnaliseAlgoritmoOrdenacao
                 {arr[i] = fotoObj[i].Titulo; //Titulo
                 }
                 if (selec == 1)
-                {arr[i] = fotoObj[i].LocalDaFoto; //Titul
+                {arr[i] = fotoObj[i].LocalDaFoto; //Titulo
                 }
                 if (selec == 2)
                 {arr[i] = fotoObj[i].DataDaFoto; //Titul
@@ -252,8 +260,9 @@ namespace AnaliseAlgoritmoOrdenacao
             preencheObj(100000);
             string jsonData = JsonConvert.SerializeObject(fotos);
             File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + @"fotos.json", jsonData); //sobrescreve o arquivo inteiro
-
-        }
+            AnaliseAlgoritmoOrdenacao.Program.setLog("Arquivo foto.json gerado em " + AppDomain.CurrentDomain.BaseDirectory + "\r\n" + AnaliseAlgoritmoOrdenacao.Program.getLog());
+            this.textBox1.Text = AnaliseAlgoritmoOrdenacao.Program.getLog();
+        }   
 
         // --QuickSort--//
         private static void Quick_Sort(int[] arr, int left, int right)
@@ -359,52 +368,52 @@ namespace AnaliseAlgoritmoOrdenacao
             a[i] = a[j];
             a[j] = temp;
         }
-    }
-        // --QuickSort--\\
-        // --CockTailSort--//
-        static void cocktailSort(int[] a)
+    
+    // --QuickSort--\\
+    // --CockTailSort--//
+    static void CocktailSort(int[] a)
+    {
+        bool swapped = true;
+        int start = 0;
+        int end = a.Length;
+
+        while (swapped == true)
         {
-            bool swapped = true;
-            int start = 0;
-            int end = a.Length;
 
-            while (swapped == true)
+            swapped = false;
+
+            for (int i = start; i < end - 1; ++i)
             {
-
-                swapped = false;
-
-                for (int i = start; i < end - 1; ++i)
+                if (a[i] > a[i + 1])
                 {
-                    if (a[i] > a[i + 1])
-                    {
-                        int temp = a[i];
-                        a[i] = a[i + 1];
-                        a[i + 1] = temp;
-                        swapped = true;
-                    }
+                    int temp = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = temp;
+                    swapped = true;
                 }
-
-             if (swapped == false)
-                    break;
-
-                swapped = false;
-                end = end - 1;
-                for (int i = end - 1; i >= start; i--)
-                {
-                    if (a[i] > a[i + 1])
-                    {
-                        int temp = a[i];
-                        a[i] = a[i + 1];
-                        a[i + 1] = temp;
-                        swapped = true;
-                    }
-                }
-                start = start + 1;
             }
+
+            if (swapped == false)
+                break;
+
+            swapped = false;
+            end = end - 1;
+            for (int i = end - 1; i >= start; i--)
+            {
+                if (a[i] > a[i + 1])
+                {
+                    int temp = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = temp;
+                    swapped = true;
+                }
+            }
+            start = start + 1;
         }
-        // --CockTailSort--\\
-        // --MergeSort-- //
-        private void Merge(int[] input, int left, int middle, int right)
+    }
+    // --CockTailSort--\\
+    // --MergeSort-- //
+    void Merge(int[] input, int left, int middle, int right)
         {
             int[] leftArray = new int[middle - left + 1];
             int[] rightArray = new int[right - middle];
@@ -439,7 +448,7 @@ namespace AnaliseAlgoritmoOrdenacao
             }
         }
 
-        private void MergeSort(int[] input, int left, int right)
+        void MergeSort(int[] input, int left, int right)
         {
             if (left < right)
             {
