@@ -60,6 +60,8 @@ namespace AnaliseAlgoritmoOrdenacao
                 }
                 interval = DateTime.Now - startTime;
                 addLog(interval.Milliseconds.ToString());
+                AnaliseAlgoritmoOrdenacao.Program.setLog(interval.Milliseconds.ToString() + "\r\n" + AnaliseAlgoritmoOrdenacao.Program.getLog());
+                this.textBox1.Text = AnaliseAlgoritmoOrdenacao.Program.getLog();
             }
             if (checkBox2.Checked == true)
             {
@@ -68,6 +70,8 @@ namespace AnaliseAlgoritmoOrdenacao
                 //ordenação cocktailSort(lista);
                 interval = DateTime.Now - startTime;
                 addLog(interval.Milliseconds.ToString());
+                AnaliseAlgoritmoOrdenacao.Program.setLog(interval.Milliseconds.ToString() + "\r\n" + AnaliseAlgoritmoOrdenacao.Program.getLog());
+                this.textBox1.Text = AnaliseAlgoritmoOrdenacao.Program.getLog();
             }
             if (checkBox3.Checked == true)
             {
@@ -76,6 +80,8 @@ namespace AnaliseAlgoritmoOrdenacao
                 //MergeSort(arr, 0, arr.Length - 1);
                 interval = DateTime.Now - startTime;
                 addLog(interval.Milliseconds.ToString());
+                AnaliseAlgoritmoOrdenacao.Program.setLog(interval.Milliseconds.ToString() + "\r\n" + AnaliseAlgoritmoOrdenacao.Program.getLog());
+                this.textBox1.Text = AnaliseAlgoritmoOrdenacao.Program.getLog();
             }
         }
         //separate in array
@@ -299,37 +305,60 @@ namespace AnaliseAlgoritmoOrdenacao
             }
         }
         //string
-        static char[] Quick_Sort(char[] items, int left, int right)
+        static void Quick_Sort(string[] a, int start, int end)
         {
-            int i, j;
-            char x, y;
+            // index for the "left-to-right scan"
+            int i = start;
+            // index for the "right-to-left scan"
+            int j = end;
 
-            i = left; j = right;
-            x = items[(left + right) / 2];
-
-            do
+            // only examine arrays of 2 or more elements.
+            if (j - i >= 1)
             {
-                while ((items[i] < x) && (i < right)) i++;
-                while ((x < items[j]) && (j > left)) j--;
-
-                if (i <= j)
+                // The pivot point of the sort method is arbitrarily set to the first element int the array.
+                String pivot = a[i];
+                // only scan between the two indexes, until they meet.
+                while (j > i)
                 {
-                    y = items[i];
-                    items[i] = items[j];
-                    items[j] = y;
-                    i++; j--;
+                    // from the left, if the current element is lexicographically less than the (original)
+                    // first element in the String array, move on. Stop advancing the counter when we reach
+                    // the right or an element that is lexicographically greater than the pivot String.
+                    while (a[i].CompareTo(pivot) < 0 && i <= end && j > i)
+                    {
+                        i++;
+                    }
+                    // from the right, if the current element is lexicographically greater than the (original)
+                    // first element in the String array, move on. Stop advancing the counter when we reach
+                    // the left or an element that is lexicographically less than the pivot String.
+                    while (a[j].CompareTo(pivot) > 0 && j >= start && j >= i)
+                    {
+                        j--;
+                    }
+                    // check the two elements in the center, the last comparison before the scans cross.
+                    if (j > i)
+                        swap(a, i, j);
                 }
-            } while (i <= j);
+                // At this point, the two scans have crossed each other in the center of the array and stop.
+                // The left partition and right partition contain the right groups of numbers but are not
+                // sorted themselves. The following recursive code sorts the left and right partitions.
 
-            if (left < j)
-            {
-                return Quick_Sort(items, left, j);
+                // Swap the pivot point with the last element of the left partition.
+                swap(a, start, j);
+                // sort left partition
+                Quick_Sort(a, start, j - 1);
+                // sort right partition
+                Quick_Sort(a, j + 1, end);
             }
-            if (i < right)
-            {
-                return Quick_Sort(items, i, right);
-            } return items;//whatever is most appropriate in the case that you arrive here
-    }
+        }
+        /**
+         * This method facilitates the quickSort method's need to swap two elements, Towers of Hanoi style.
+         */
+        private static void swap(String[] a, int i, int j)
+        {
+            String temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
+        }
     }
         // --QuickSort--\\
         // --CockTailSort--//
